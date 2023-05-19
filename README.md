@@ -49,3 +49,21 @@ ispconfig_update.sh
 ispconfig_update.sh --force
 ```
 
+### 🧦 ISPProtect
+
+ISPProtect is a powerful security tool designed to scan and protect web servers against malware and suspicious files. It offers comprehensive monitoring, detection, and removal of threats, ensuring enhanced security for server environments.
+
+```shell
+mkdir -p /usr/local/ispprotect
+chown -R root:root /usr/local/ispprotect
+chmod -R 750 /usr/local/ispprotect
+cd /usr/local/ispprotect
+wget https://www.ispprotect.com/download/ispp_scan.tar.gz
+tar xzf ispp_scan.tar.gz
+rm -f ispp_scan.tar.gz
+ln -s /usr/local/ispprotect/ispp_scan /usr/local/bin/ispp_scan
+```
+
+```shell
+ispp_scan
+```
