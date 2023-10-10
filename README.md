@@ -1,4 +1,4 @@
-# 🎉 ispconfig-shell-script
+# 🎉 ISPConfig Shell Script
 ISPConfig is a web hosting control panel for Linux servers. A shell script can be used to automate common tasks like creating email accounts and websites, managing FTP users, and configuring SSL certificates.
 
 ![version](https://img.shields.io/badge/version-1.0-blue)
