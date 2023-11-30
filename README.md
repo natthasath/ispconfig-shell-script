@@ -5,6 +5,18 @@ ISPConfig is a web hosting control panel for Linux servers. A shell script can b
 ![rating](https://img.shields.io/badge/rating-★★★★★-yellow)
 ![uptime](https://img.shields.io/badge/uptime-100%25-brightgreen)
 
+### 🐲 Use Apache
+
+```
+curl https://get.ispconfig.org | sh
+```
+
+### 🦄 Use NginX
+
+```
+curl https://get.ispconfig.org | sh -s -- --use-nginx
+```
+
 ### 🧩 Check Version
 
 ```
