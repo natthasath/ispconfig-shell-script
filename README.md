@@ -23,6 +23,14 @@ curl https://get.ispconfig.org | sh -s -- --use-nginx
 grep 'def.*VERS' /usr/local/ispconfig/server/lib/config.inc.php
 ```
 
+### ⌚ Set Date Time
+
+```
+timedatectl
+timedatectl list-timezones
+timedatectl set-timezone Asia/Bangkok
+```
+
 ### 🥏 Manual Backup
 
 - Create a backup folder 
