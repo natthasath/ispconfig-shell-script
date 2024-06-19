@@ -112,7 +112,7 @@ sudo -u web1 php /usr/local/bin/wp plugin list
 sudo -u web1 php /usr/local/bin/wp plugin update --all
 sudo -u web1 php /usr/local/bin/wp theme list
 sudo -u web1 php /usr/local/bin/wp theme update --all
-sudo -u web4 php /usr/local/bin/wp core version
+sudo -u web1 php /usr/local/bin/wp core version
 sudo -u web1 php /usr/local/bin/wp core update
 ```
 
@@ -120,6 +120,6 @@ sudo -u web1 php /usr/local/bin/wp core update
 
 ```
 sudo -u web1 php /usr/local/bin/wp user list
-sudo -u web4 php /usr/local/bin/wp db check
-sudo -u web4 php /usr/local/bin/wp menu item list main-menu
+sudo -u web1 php /usr/local/bin/wp db check
+sudo -u web1 php /usr/local/bin/wp menu item list main-menu
 ```
