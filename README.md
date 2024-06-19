@@ -93,3 +93,33 @@ ln -s /usr/local/ispprotect/ispp_scan /usr/local/bin/ispp_scan
 ```shell
 ispp_scan
 ```
+
+### 🪬 WP-CLI
+
+[WP-CLI](https://developer.wordpress.org/cli/commands/) is a command line interface for WordPress. You can update plugins, configure multisite installations, and much more, without using a web browser. Efficient for developers and administrators, it simplifies many WordPress tasks through a simple command-line interface.
+
+```shell
+curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+php wp-cli.phar --info
+chmod +x wp-cli.phar
+sudo mv wp-cli.phar /usr/local/bin/wp
+```
+
+- Sort by priority update
+
+```
+sudo -u web1 php /usr/local/bin/wp plugin list
+sudo -u web1 php /usr/local/bin/wp plugin update --all
+sudo -u web1 php /usr/local/bin/wp theme list
+sudo -u web1 php /usr/local/bin/wp theme update --all
+sudo -u web4 php /usr/local/bin/wp core version
+sudo -u web1 php /usr/local/bin/wp core update
+```
+
+- Another Command
+
+```
+sudo -u web1 php /usr/local/bin/wp user list
+sudo -u web4 php /usr/local/bin/wp db check
+sudo -u web4 php /usr/local/bin/wp menu item list main-menu
+```
