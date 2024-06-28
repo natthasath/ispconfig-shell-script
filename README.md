@@ -108,25 +108,25 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 - Command Run
 
 ```
-sudo -u web1 php /usr/local/bin/wp core version --path=/var/www/clients/client1/web1/web
+sudo -u web1 php /usr/local/bin/wp core version
 wp core version --path=/var/www/clients/client1/web1/web
 ```
 
 - Sort by priority update
 
 ```
-wp plugin list
-wp plugin update --all
-wp theme list
-wp theme update --all
-wp core version
-wp core update
+sudo -u web1 wp plugin list
+sudo -u web1 wp plugin update --all
+sudo -u web1 wp theme list
+sudo -u web1 wp theme update --all
+sudo -u web1 wp core version
+sudo -u web1 wp core update
 ```
 
 - Another Command
 
 ```
-wp user list
-wp db check
-wp menu item list main-menu
+sudo -u web1 wp user list
+sudo -u web1 wp db check
+sudo -u web1 wp menu item list main-menu
 ```
