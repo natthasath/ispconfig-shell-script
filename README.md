@@ -105,21 +105,28 @@ chmod +x wp-cli.phar
 sudo mv wp-cli.phar /usr/local/bin/wp
 ```
 
+- Command Run
+
+```
+sudo -u web1 php /usr/local/bin/wp core version --path=/var/www/clients/client1/web1/web
+wp core version --path=/var/www/clients/client1/web1/web
+```
+
 - Sort by priority update
 
 ```
-sudo -u web1 php /usr/local/bin/wp plugin list
-sudo -u web1 php /usr/local/bin/wp plugin update --all
-sudo -u web1 php /usr/local/bin/wp theme list
-sudo -u web1 php /usr/local/bin/wp theme update --all
-sudo -u web1 php /usr/local/bin/wp core version
-sudo -u web1 php /usr/local/bin/wp core update
+wp plugin list
+wp plugin update --all
+wp theme list
+wp theme update --all
+wp core version
+wp core update
 ```
 
 - Another Command
 
 ```
-sudo -u web1 php /usr/local/bin/wp user list
-sudo -u web1 php /usr/local/bin/wp db check
-sudo -u web1 php /usr/local/bin/wp menu item list main-menu
+wp user list
+wp db check
+wp menu item list main-menu
 ```
