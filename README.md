@@ -31,7 +31,7 @@ timedatectl list-timezones
 timedatectl set-timezone Asia/Bangkok
 ```
 
-### Set NTP
+### ⌛ Set NTP
 
 ```shell
 vi /etc/ntp.conf
