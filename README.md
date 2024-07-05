@@ -7,28 +7,44 @@ ISPConfig is a web hosting control panel for Linux servers. A shell script can b
 
 ### 🐲 Use Apache
 
-```
+```shell
 curl https://get.ispconfig.org | sh
 ```
 
 ### 🦄 Use NginX
 
-```
+```shell
 curl https://get.ispconfig.org | sh -s -- --use-nginx
 ```
 
 ### 🧩 Check Version
 
-```
+```shell
 grep 'def.*VERS' /usr/local/ispconfig/server/lib/config.inc.php
 ```
 
-### ⌚ Set Date Time
+### ⌚ Set Timezone
 
-```
+```shell
 timedatectl
 timedatectl list-timezones
 timedatectl set-timezone Asia/Bangkok
+```
+
+### Set NTP
+
+```shell
+vi /etc/ntp.conf
+---
+server time.navy.mi.th iburst
+server time1.nimt.or.th iburst
+server clock.nectec.or.th iburst
+```
+
+```shell
+sudo systemctl restart ntp
+sudo systemctl status ntp
+ntpq -p
 ```
 
 ### 🥏 Manual Backup
@@ -107,26 +123,26 @@ sudo mv wp-cli.phar /usr/local/bin/wp
 
 - Command Run
 
-```
+```shell
 sudo -u web1 php /usr/local/bin/wp core version
 wp core version --path=/var/www/clients/client1/web1/web
 ```
 
 - Sort by priority update
 
-```
-sudo -u web1 wp plugin list
-sudo -u web1 wp plugin update --all
-sudo -u web1 wp theme list
-sudo -u web1 wp theme update --all
-sudo -u web1 wp core version
-sudo -u web1 wp core update
+```shell
+sudo -u web1 wp plugin list --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp plugin update --all --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp theme list --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp theme update --all --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp core version --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp core update --path=/var/www/clients/client1/web1/web
 ```
 
 - Another Command
 
-```
-sudo -u web1 wp user list
-sudo -u web1 wp db check
-sudo -u web1 wp menu item list main-menu
+```shell
+sudo -u web1 wp user list --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp db check --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp menu item list main-menu --path=/var/www/clients/client1/web1/web
 ```
