@@ -63,6 +63,24 @@ vi /etc/nginx/sites-available/ispconfig.vhost
 systemctl restart apache2
 ```
 
+### 🦩 Change Password Root MySQL
+
+```sql
+use mysql
+alter user 'root'@'localhost' identified by 'changeme';
+flush privileges;
+quit;
+```
+
+### 🦚 Change Password Admin ISPConfig
+
+```sql
+use dbispconfig;
+update sys_user set passwort = md5('changeme') where username = 'admin';
+flush privileges;
+quit;
+```
+
 ### 🥏 Manual Backup
 
 - Create a backup folder 
