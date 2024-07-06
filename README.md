@@ -47,6 +47,22 @@ sudo systemctl status ntp
 ntpq -p
 ```
 
+### 🦕 Change Port ISPConfig
+
+- Apache
+
+```shell
+vi /etc/apache2/sites-available/ispconfig.vhost
+systemctl restart apache2
+```
+
+- Nginx
+
+```shell
+vi /etc/nginx/sites-available/ispconfig.vhost
+systemctl restart apache2
+```
+
 ### 🥏 Manual Backup
 
 - Create a backup folder 
