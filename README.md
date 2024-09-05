@@ -76,6 +76,7 @@ quit;
 
 ```shell
 vi /usr/local/ispconfig/server/lib/mysql_clientdb.conf
+systemctl restart apache2
 ```
 
 ### 🦚 Change Password Admin ISPConfig
