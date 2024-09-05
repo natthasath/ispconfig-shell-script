@@ -72,6 +72,12 @@ flush privileges;
 quit;
 ```
 
+### 🦩 Update Password Root MySQL connect via phpMyAdmin
+
+```shell
+vi /usr/local/ispconfig/server/lib/mysql_clientdb.conf
+```
+
 ### 🦚 Change Password Admin ISPConfig
 
 ```sql
