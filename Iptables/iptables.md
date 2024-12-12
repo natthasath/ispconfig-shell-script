@@ -10,7 +10,7 @@ vi /home/[user]/script/banlist.txt
 
 * Show Rule
 ```shell
-Iptables -S
+iptables -S
 ```
 
 ```

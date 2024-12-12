@@ -194,3 +194,27 @@ sudo -u web1 wp menu item list main-menu --path=/var/www/clients/client1/web1/we
 sudo apt install zstd -y
 tar -czvf - input/ | zstd -o output.tar.zst
 ```
+
+### ✨ Add PHP Latest Version
+
+```shell
+sudo apt install -y php8.2 php8.2-cli php8.2-fpm php8.2-mysql php8.2-curl php8.2-gd php8.2-intl php8.2-mbstring php8.2-xml php8.2-zip php8.2-soap php8.2-bcmath
+sudo apt install -y php8.3 php8.3-cli php8.3-fpm php8.3-mysql php8.3-curl php8.3-gd php8.3-intl php8.3-mbstring php8.3-xml php8.3-zip php8.3-soap php8.3-bcmath
+sudo apt install -y php8.4 php8.4-cli php8.4-fpm php8.4-mysql php8.4-curl php8.4-gd php8.4-intl php8.4-mbstring php8.4-xml php8.4-zip php8.4-soap php8.4-bcmath
+
+sudo systemctl enable php8.2-fpm
+sudo systemctl start php8.2-fpm
+sudo systemctl status php8.2-fpm
+
+sudo systemctl enable php8.3-fpm
+sudo systemctl start php8.3-fpm
+sudo systemctl status php8.3-fpm
+
+sudo systemctl enable php8.4-fpm
+sudo systemctl start php8.4-fpm
+sudo systemctl status php8.4-fpm
+
+php8.2 -v
+php8.3 -v
+php8.4 -v
+```
