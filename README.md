@@ -88,6 +88,22 @@ flush privileges;
 quit;
 ```
 
+### 🦠 Change Docker Network Subnet
+
+```shell
+vi /etc/docker/daemon.json
+```
+
+```json
+{
+  "bip": "172.18.0.1/16"
+}
+```
+
+```shell
+systemctl restart docker
+```
+
 ### 🥏 Manual Backup
 
 - Create a backup folder 
