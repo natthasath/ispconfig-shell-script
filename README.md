@@ -90,15 +90,21 @@ quit;
 
 ### 🦠 Change Docker Network Subnet
 
+- Create file
+
 ```shell
 vi /etc/docker/daemon.json
 ```
+
+- Add configuration
 
 ```json
 {
   "bip": "172.18.0.1/16"
 }
 ```
+
+- Restart Docker
 
 ```shell
 systemctl restart docker
