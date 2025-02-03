@@ -2,7 +2,7 @@
 
 # Set the base directory where websites are stored
 WEB_DIR="/var/www"
-OUTPUT_FILE="report-wpbackup.txt"
+OUTPUT_FILE="report-wpress.txt"
 
 # Define the file extensions to look for
 FILE_EXTENSIONS=".wpress .zip .jpa .tar .gz .sql"
@@ -36,7 +36,10 @@ for site in "$WEB_DIR"/*; do
                 for ext in $FILE_EXTENSIONS; do
                     # Find all files with the current extension in the directory
                     find "$backup_dir" -type f -name "*$ext" | while read -r file; do
-                        echo "$website_name: $file" >> "$OUTPUT_FILE"
+                        # Get the file size in a human-readable format
+                        file_size=$(du -h "$file" | cut -f1)
+                        # Write the website name, file path, and file size to the output file
+                        echo "$website_name: $file (Size: $file_size)" >> "$OUTPUT_FILE"
                     done
                 done
             fi
