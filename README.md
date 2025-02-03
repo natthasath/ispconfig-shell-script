@@ -240,3 +240,10 @@ php8.2 -v
 php8.3 -v
 php8.4 -v
 ```
+
+### ⌚ Crontab
+
+```shell
+0 5 * * * /root/ispconfig-shell-script/scripts/list-wordpress-backup.sh
+0 6 * * * /root/ispconfig-shell-script/scripts/delete-wordpress-backups.sh
+```
