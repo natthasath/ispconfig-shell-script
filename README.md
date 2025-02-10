@@ -63,6 +63,15 @@ vi /etc/nginx/sites-available/ispconfig.vhost
 systemctl restart apache2
 ```
 
+### 🦚 Change Password Admin ISPConfig
+
+```sql
+use dbispconfig;
+update sys_user set passwort = md5('changeme') where username = 'admin';
+flush privileges;
+quit;
+```
+
 ### 🦩 Change Password Root MySQL
 
 ```sql
@@ -72,6 +81,42 @@ flush privileges;
 quit;
 ```
 
+### 🐿️ Enable General Log MySQL
+
+```sql
+SHOW VARIABLES LIKE 'datadir';
+SHOW VARIABLES LIKE 'general_log_file';
+SHOW VARIABLES LIKE 'slow_query_log';
+SHOW VARIABLES LIKE 'log_output'; 
+SET GLOBAL general_log = 'ON';
+SET GLOBAL general_log_file = '/var/log/mysql/general.log';
+
+```
+
+### 🐦‍🔥 Config Log Rotation
+
+```shell
+vi /etc/logrotate.d/mysql-general-log
+```
+
+```
+/var/log/mysql/general.log {
+    daily
+    rotate 7
+    compress
+    missingok
+    notifempty
+    create 640 mysql adm
+    postrotate
+        systemctl reload mysql > /dev/null 2>&1 || true
+    endscript
+}
+```
+
+```shell
+logrotate -f /etc/logrotate.d/mysql-general-log
+```
+
 ### 🦩 Update Password Root MySQL connect via phpMyAdmin
 
 ```shell
@@ -79,13 +124,14 @@ vi /usr/local/ispconfig/server/lib/mysql_clientdb.conf
 systemctl restart apache2
 ```
 
-### 🦚 Change Password Admin ISPConfig
+### 🐙 Change Path phpMyAdmin
 
-```sql
-use dbispconfig;
-update sys_user set passwort = md5('changeme') where username = 'admin';
-flush privileges;
-quit;
+```shell
+vi /etc/apache2/conf-enabled/phpmyadmin.conf
+```
+
+```
+Alias /hide /usr/share/phpmyadmin
 ```
 
 ### 🦠 Change Docker Network Subnet
