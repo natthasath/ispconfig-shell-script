@@ -85,6 +85,7 @@ quit;
 
 ```sql
 SHOW VARIABLES LIKE 'datadir';
+SHOW VARIABLES LIKE 'general_log';
 SHOW VARIABLES LIKE 'general_log_file';
 SHOW VARIABLES LIKE 'slow_query_log';
 SHOW VARIABLES LIKE 'log_output'; 
