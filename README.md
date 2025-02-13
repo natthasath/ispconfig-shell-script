@@ -107,7 +107,7 @@ vi /etc/logrotate.d/mysql-general-log
     compress
     missingok
     notifempty
-    create 640 mysql adm
+    create 660 mysql adm
     postrotate
         systemctl reload mysql > /dev/null 2>&1 || true
     endscript
