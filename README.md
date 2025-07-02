@@ -257,6 +257,12 @@ sudo -u web1 wp db check --path=/var/www/clients/client1/web1/web
 sudo -u web1 wp menu item list main-menu --path=/var/www/clients/client1/web1/web
 ```
 
+- Create User
+
+```shell
+sudo -u web1 php /usr/local/bin/wp user create john john@example.com --role=administrator --user_pass=changeme
+```
+
 ### 🫂 ZST Compress Command
 
 ```shell
