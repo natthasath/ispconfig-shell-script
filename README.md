@@ -260,7 +260,7 @@ sudo -u web1 wp menu item list main-menu --path=/var/www/clients/client1/web1/we
 - Create User
 
 ```shell
-sudo -u web1 php /usr/local/bin/wp user create john john@example.com --role=administrator --user_pass=changeme
+sudo -u web1 php /usr/local/bin/wp user create john john@example.com --role=administrator --user_pass=changeme --path=/var/www/clients/client1/web1/web
 ```
 
 ### 🫂 ZST Compress Command
