@@ -254,6 +254,8 @@ sudo -u web1 wp core update --path=/var/www/clients/client1/web1/web
 ```shell
 sudo -u web1 wp user list --path=/var/www/clients/client1/web1/web
 sudo -u web1 wp db check --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp db repair --path=/var/www/clients/client1/web1/web
+sudo -u web1 wp db optimize --path=/var/www/clients/client1/web1/web
 sudo -u web1 wp menu item list main-menu --path=/var/www/clients/client1/web1/web
 ```
 
