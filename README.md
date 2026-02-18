@@ -432,6 +432,30 @@ php8.3 -v
 php8.4 -v
 ```
 
+### ISPConfig Scripts
+
+| Script                              | Category              | Purpose                                                                                                        |
+| ----------------------------------- | --------------------- | -------------------------------------------------------------------------------------------------------------- |
+| `handle_mailbox_soft_deleted.sh`    | Mail management       | Processes mailboxes marked as soft-deleted (cleanup, retention handling, or final removal after grace period). |
+| `vlogger`                           | Logging / diagnostics | Logging utility used by services (commonly web servers) to record or process logs, often per virtual host.     |
+| `update_stable.sh`                  | Update system         | Initiates update from the stable release channel.                                                              |
+| `update_runner.sh`                  | Update system         | Main update execution wrapper that coordinates the update workflow.                                            |
+| `update_from_svn.sh`                | Update system         | Updates installation from an SVN repository source.                                                            |
+| `update_from_dev_stable.sh`         | Update system         | Updates from a development branch considered relatively stable (testing channel).                              |
+| `update_from_dev.sh`                | Update system         | Updates directly from the development branch (bleeding-edge code).                                             |
+| `ispconfig_update.sh`               | Update system         | Shell wrapper that prepares environment and triggers the main update process.                                  |
+| `ispconfig_update.php`              | Update system         | Core update logic (PHP) handling version checks, file updates, and database migrations.                        |
+| `ispconfig_patch`                   | Update system         | Applies patches or hotfixes to an existing installation.                                                       |
+| `ispconfig_htaccess.php`            | Web configuration     | Generates or updates `.htaccess` rules for panel or hosted environments.                                       |
+| `letsencrypt_pre_hook.sh`           | SSL / Let’s Encrypt   | Runs before certificate issuance or renewal (prepare services, validation setup, etc.).                        |
+| `letsencrypt_post_hook.sh`          | SSL / Let’s Encrypt   | Runs after certificate issuance or renewal (deploy certs, reload services).                                    |
+| `letsencrypt_renew_hook.sh`         | SSL / Let’s Encrypt   | Executes during renewal lifecycle to manage service behavior tied to renewal.                                  |
+| `create_jailkit_user.sh`            | Jailkit environment   | Creates a jailed system user inside a Jailkit environment.                                                     |
+| `create_jailkit_programs.sh`        | Jailkit environment   | Installs or enables specific programs inside the jail environment.                                             |
+| `create_jailkit_chroot.sh`          | Jailkit environment   | Builds or prepares the chroot jail filesystem structure.                                                       |
+| `create_daily_nginx_access_logs.sh` | Logging / web server  | Creates or rotates daily Nginx access logs (per site or system-wide depending on config).                      |
+
+
 ### ⌚ Crontab
 
 ```shell
